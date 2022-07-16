@@ -67,34 +67,39 @@ useEffect(() => {
 
 
     return (
-    <section className='section-center'>
-      <form onSubmit={handleSubmit}>
-        {alert.show && <Alert {...alert} removeAlert={showAlert} list={list}/>}
-        <h3>List Out Your Groceries Here...!</h3>
-        <div className='mb-3 form'>
-          <input
-          type="text"
-          className='form-control'
-          placeholder='e.g.bread'
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          />
-          <button type='submit' className='btn btn-success'>
-            {isEditing ? "Edit" : "Submit"}
-          </button>
-        </div>
-      </form>
-      {list.length > 0 && (
-        <div style={{marginTop: "2rem"}}>
-          <List items={list} removeItem={removeItem} editItem={editItem}/>
-          <div className='text-center'>
-            <button className='btn1 btn-warning' onClick={clearList}>Clear Items</button>
+      <section className="section-center">
+        <form onSubmit={handleSubmit}>
+          {alert.show && (
+            <Alert {...alert} removeAlert={showAlert} list={list} />
+          )}
+          <h3>List Out Your Groceries Here...!</h3>
+          <div className="mb-3 form">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="e.g.bread"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+            <button type="submit" className="btn btn-success">
+              {isEditing ? "Edit" : "Submit"}
+            </button>
           </div>
-        </div>
-      )}
-
-    </section>
-  );
+        </form>
+        {list.length > 0 && (
+          <div style={{ marginTop: "2rem" }}>
+            <div className="output">
+              <List items={list} removeItem={removeItem} editItem={editItem} />
+            </div>
+            <div className="text-center">
+              <button className="btn1 btn-warning" onClick={clearList}>
+                Clear Items
+              </button>
+            </div>
+          </div>
+        )}
+      </section>
+    );
 };
 
 export default App;

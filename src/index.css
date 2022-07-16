@@ -102,3 +102,11 @@ li{
   justify-content: center;
   align-items: center;
 }
+.output{
+  background-color: #721c24;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
